@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="images/faviconzelda.png" type="image/x-icon"/>
+        
+        <title>Numéro mystère</title>
+
+    </head>
+    
+    <body>
+        
+        <header>
+            <h1><strong>The Legend of Mystery Number</strong></h1>
+        </header>
+        <figure>
+            <audio autoplay controls src="/musique/Hyrule Overworld Theme -The Legend of Zelda-.mp3"></audio>
+        </figure>
+
+
+        <div class="container">
+            <div class="card">
+                <h2 class="card-title">Trouvez le Chiffre Mystere</h2>
+                <div class="selection-difficulté">
+                    <label for="difficulté">Difficulté</label><br>
+                     <select id="difficulty" class="select" onchange="setDifficulty()">
+                        <option value="" disabled selected>Choisissez une difficulté</option>
+                        <option value="10">Facile entre 1 et 10</option>
+                        <option value="50">Moyen entre  1 et 50 </option>
+                        <option value="100">Difficile entre 1 et 100</option>               
+                    </select>
+                </div>
+                <p class="card-text">Devinez le nombre entre 1 et <span id="nombre-max">100</span></p>
+                <input type="number" id="guess" class="input" min="1" max="100"  placeholder=">Entrez votre réponse" disabled>
+                <button class="button" onclick="validGuess()" disabled>Valider la réponse</button>
+                <div class="restartGame">
+                <button class="button" onclick="restartGame()">Relancer</button>
+                </div>
+                <p id="message" class="message"></p>
+              
+            </div>
+              <div class="tentative-log-container">
+                    <h2 class="log-title">Historique des tentatives</h2>
+                    <table id="tentative-log" class="tentative-log">
+                        <thead>
+                            <tr>
+                                <th>Tentatives</th>
+                                <th>Nombre choisi</th>
+                            </tr>
+                            <tbody>
+                            </tbody>
+                        </thead>
+                    </table>
+                </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
